@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="winry" translatesAutoresizingMaskIntoConstraints="NO" id="x0k-Kh-ted" customClass="ImageViewButton" customModule="ColorGame" customModuleProvider="target">
+                                <rect key="frame" x="16" y="622" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x0k-Kh-ted" secondAttribute="height" multiplier="1:1" id="jgo-UC-9uH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="winry" translatesAutoresizingMaskIntoConstraints="NO" id="Y0F-5l-PHg" userLabel="ButtonYellow" customClass="ImageViewButton" customModule="ColorGame" customModuleProvider="target">
+                                <rect key="frame" x="16" y="468" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y0F-5l-PHg" secondAttribute="height" multiplier="1:1" id="YWP-V0-UWA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="winry" translatesAutoresizingMaskIntoConstraints="NO" id="C5J-cl-6Wj" userLabel="ButtonGreen" customClass="ImageViewButton" customModule="ColorGame" customModuleProvider="target">
+                                <rect key="frame" x="229" y="468" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C5J-cl-6Wj" secondAttribute="height" multiplier="1:1" id="BaE-BQ-ug0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="winry" translatesAutoresizingMaskIntoConstraints="NO" id="Z0I-eP-hQu" customClass="ImageViewButton" customModule="ColorGame" customModuleProvider="target">
+                                <rect key="frame" x="229" y="622" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z0I-eP-hQu" secondAttribute="height" multiplier="1:1" id="Jla-bv-BBR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winry" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-jL-V24" customClass="ImageViewMonitor" customModule="ColorGame" customModuleProvider="target">
+                                <rect key="frame" x="50" y="63" width="275" height="400"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Omp-jL-V24" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6X8-d9-1W3"/>
+                            <constraint firstItem="x0k-Kh-ted" firstAttribute="top" secondItem="Y0F-5l-PHg" secondAttribute="bottom" constant="16" id="K94-gY-OMo"/>
+                            <constraint firstItem="x0k-Kh-ted" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OTJ-SY-HpE"/>
+                            <constraint firstItem="Omp-jL-V24" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="P0N-5B-RhH"/>
+                            <constraint firstItem="x0k-Kh-ted" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Riu-se-UBu"/>
+                            <constraint firstItem="Y0F-5l-PHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WAP-az-zuy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C5J-cl-6Wj" secondAttribute="trailing" constant="16" id="aQa-35-3GG"/>
+                            <constraint firstItem="Z0I-eP-hQu" firstAttribute="top" secondItem="C5J-cl-6Wj" secondAttribute="bottom" constant="16" id="bnK-cV-Ho7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z0I-eP-hQu" secondAttribute="bottom" id="c3w-jS-S6D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z0I-eP-hQu" secondAttribute="trailing" constant="16" id="uD5-Xp-WF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Omp-jL-V24" secondAttribute="trailing" constant="50" id="ydp-K2-IZL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonBlue" destination="x0k-Kh-ted" id="NFc-GG-leH"/>
+                        <outlet property="buttonGreen" destination="C5J-cl-6Wj" id="dMb-Ce-USl"/>
+                        <outlet property="buttonRed" destination="Z0I-eP-hQu" id="go3-ap-JaF"/>
+                        <outlet property="buttonYellow" destination="Y0F-5l-PHg" id="Bdc-r5-hIw"/>
+                        <outlet property="monitorImage" destination="Omp-jL-V24" id="5oN-Y5-9Kc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="52" y="3.6945812807881775"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="winry" width="400" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

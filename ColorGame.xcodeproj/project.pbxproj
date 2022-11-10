@@ -14,6 +14,8 @@
 		2814F6AA29198A9E00A382E6 /* ColorGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2814F6A829198A9E00A382E6 /* ColorGame.xcdatamodeld */; };
 		2814F6AC29198A9F00A382E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2814F6AB29198A9F00A382E6 /* Assets.xcassets */; };
 		2814F6AF29198A9F00A382E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2814F6AD29198A9F00A382E6 /* LaunchScreen.storyboard */; };
+		283A5BFB291D79ED003D66B2 /* ImageViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */; };
+		283A5BFD291D8469003D66B2 /* ImageViewMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283A5BFC291D8469003D66B2 /* ImageViewMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2814F6AB29198A9F00A382E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2814F6AE29198A9F00A382E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2814F6B029198A9F00A382E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewButton.swift; sourceTree = "<group>"; };
+		283A5BFC291D8469003D66B2 /* ImageViewMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 		2814F69E29198A9E00A382E6 /* ColorGame */ = {
 			isa = PBXGroup;
 			children = (
+				283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */,
 				2814F69F29198A9E00A382E6 /* AppDelegate.swift */,
 				2814F6A129198A9E00A382E6 /* SceneDelegate.swift */,
 				2814F6A329198A9E00A382E6 /* ViewController.swift */,
+				283A5BFC291D8469003D66B2 /* ImageViewMonitor.swift */,
 				2814F6A529198A9E00A382E6 /* Main.storyboard */,
 				2814F6AB29198A9F00A382E6 /* Assets.xcassets */,
 				2814F6AD29198A9F00A382E6 /* LaunchScreen.storyboard */,
@@ -144,7 +150,9 @@
 				2814F6A429198A9E00A382E6 /* ViewController.swift in Sources */,
 				2814F6A029198A9E00A382E6 /* AppDelegate.swift in Sources */,
 				2814F6A229198A9E00A382E6 /* SceneDelegate.swift in Sources */,
+				283A5BFD291D8469003D66B2 /* ImageViewMonitor.swift in Sources */,
 				2814F6AA29198A9E00A382E6 /* ColorGame.xcdatamodeld in Sources */,
+				283A5BFB291D79ED003D66B2 /* ImageViewButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
