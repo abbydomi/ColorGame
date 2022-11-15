@@ -8,7 +8,7 @@
 import UIKit
 
 class ImageViewButton: UIImageView{
-    
+    var name = ""
     func resizeImage(targetSize: CGSize){
         let size = self.image!.size
         let widthRatio  = targetSize.width  / size.width
