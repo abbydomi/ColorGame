@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         
-        monitorImage.resizeImage(targetSize: CGSize(width: screenWidth/monitorDivider, height: screenWidth/monitorDivider))
+        monitorImage.resizeImage(targetSize: CGSize(width: screenWidth/monitorDivider, height: screenHeight/monitorDivider))
         monitorImage.layer.cornerRadius = 10
         
         disablePlay()
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         case Color.blue: monitorImage.image = UIImage(named: "BlueButton")
         case Color.gray: monitorImage.image = UIImage(named: "GrayButton")
         }
-        monitorImage.resizeImage(targetSize: CGSize(width: screenWidth/monitorDivider, height: screenWidth/monitorDivider))
+        monitorImage.resizeImage(targetSize: CGSize(width: screenWidth/monitorDivider, height: screenHeight/monitorDivider))
         monitorImage.layer.cornerRadius = 10
     }
     func initColorList(amount: Int){
@@ -142,16 +142,16 @@ class ViewController: UIViewController {
     func disablePlay(){
         userTapIndex = 0
         buttonBlue.image = UIImage(named: "GrayButton")
-        buttonBlue.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonBlue.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonBlue.layer.cornerRadius = 22
         buttonRed.image = UIImage(named: "GrayButton")
-        buttonRed.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonRed.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonRed.layer.cornerRadius = 22
         buttonGreen.image = UIImage(named: "GrayButton")
-        buttonGreen.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonGreen.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonGreen.layer.cornerRadius = 22
         buttonYellow.image = UIImage(named: "GrayButton")
-        buttonYellow.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonYellow.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonYellow.layer.cornerRadius = 22
         buttonBlue.isUserInteractionEnabled = false
         buttonRed.isUserInteractionEnabled = false
@@ -160,16 +160,16 @@ class ViewController: UIViewController {
     }
     func enablePlay(){
         buttonBlue.image = UIImage(named: "BlueButton")
-        buttonBlue.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonBlue.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonBlue.layer.cornerRadius = 22
         buttonRed.image = UIImage(named: "RedButton")
-        buttonRed.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonRed.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonRed.layer.cornerRadius = 22
         buttonGreen.image = UIImage(named: "GreenButton")
-        buttonGreen.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonGreen.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonGreen.layer.cornerRadius = 22
         buttonYellow.image = UIImage(named: "YellowButton")
-        buttonYellow.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenWidth/imageSizeDivider - margin))
+        buttonYellow.resizeImage(targetSize: CGSize(width: screenWidth/imageSizeDivider - margin, height: screenHeight/imageSizeDivider - margin))
         buttonYellow.layer.cornerRadius = 22
         buttonBlue.isUserInteractionEnabled = true
         buttonRed.isUserInteractionEnabled = true
