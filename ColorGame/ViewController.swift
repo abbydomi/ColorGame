@@ -17,14 +17,16 @@ class ViewController: UIViewController {
     private var screenWidth = CGFloat()
     private var screenHeight = CGFloat()
     private var margin = 22.0
-    private var imageSizeDivider = CGFloat(2)
-    private var monitorDivider = CGFloat(1.4)
+    private var imageSizeDivider = CGFloat(2.1)
+    private var monitorDivider = CGFloat(1.5)
     private let tapRed = UITapGestureRecognizer()
     private let tapBlue = UITapGestureRecognizer()
     private let tapGreen = UITapGestureRecognizer()
     private let tapYellow = UITapGestureRecognizer()
     private var colorList: [Color] = []
     private var userTapIndex = 0
+    private var score = 0
+    private var speed = 1.0
     
     @IBOutlet weak var monitorImage: ImageViewMonitor!
     @IBOutlet weak var buttonGreen: ImageViewButton!
@@ -35,8 +37,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UIDevice.current.userInterfaceIdiom == .pad {
-            imageSizeDivider = 3
-            monitorDivider = 1.5
+            imageSizeDivider = 2.9
+            monitorDivider = 1.6
             margin = 40
         }
         screenSize = UIScreen.main.bounds
@@ -65,9 +67,17 @@ class ViewController: UIViewController {
         
         //Game start
         initColorList(amount: 4)
-        showColorList(speed: 1.0, index: 0)
+        showColorList(speed: speed, index: 0)
     
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameOverSeg"{
+            let destination = segue.destination as? GameOverViewController
+            destination?.score = self.score
+        }
+    }
+    
     @objc func tappedView(_ sender: UITapGestureRecognizer){
         let buttonTapped = sender.view as! ImageViewButton
         if buttonTapped.isUserInteractionEnabled {
@@ -171,15 +181,20 @@ class ViewController: UIViewController {
         let uialert = UIAlertController(title: "Game over", message: "Boo!!", preferredStyle: UIAlertController.Style.alert)
         uialert.addAction(UIAlertAction(title: ":(", style: UIAlertAction.Style.default, handler: {
             (action) in
-            self.disablePlay()  
+            self.disablePlay()
             self.initColorList(amount: 4)
             self.showColorList(speed: 1.0, index: 0)
         }))
-        self.present(uialert, animated: true, completion: nil)
+        //self.present(uialert, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "gameOverSeg", sender: Any?.self)
     }
     func nextLevel(){
+        if speed > 0.2 {
+            speed = speed-0.1
+        }
+        score+=1
         disablePlay()
         addColorToList(color: randomColor())
-        showColorList(speed: 1.0, index: 0)
+        showColorList(speed: speed, index: 0)
     }
 }

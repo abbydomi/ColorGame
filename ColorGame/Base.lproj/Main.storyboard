@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cTG-rC-cU5">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,9 +13,9 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="ColorGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BlueButton" translatesAutoresizingMaskIntoConstraints="NO" id="x0k-Kh-ted" customClass="ImageViewButton" customModule="ColorGame" customModuleProvider="target">
@@ -41,7 +43,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrayButton" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-jL-V24" customClass="ImageViewMonitor" customModule="ColorGame" customModuleProvider="target">
-                                <rect key="frame" x="50" y="63" width="275" height="128"/>
+                                <rect key="frame" x="50" y="63" width="290" height="128"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                         </subviews>
@@ -61,27 +63,177 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Omp-jL-V24" secondAttribute="trailing" constant="50" id="ydp-K2-IZL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6fe-DI-Iqo"/>
                     <connections>
                         <outlet property="buttonBlue" destination="x0k-Kh-ted" id="NFc-GG-leH"/>
                         <outlet property="buttonGreen" destination="C5J-cl-6Wj" id="dMb-Ce-USl"/>
                         <outlet property="buttonRed" destination="Z0I-eP-hQu" id="go3-ap-JaF"/>
                         <outlet property="buttonYellow" destination="Y0F-5l-PHg" id="Bdc-r5-hIw"/>
                         <outlet property="monitorImage" destination="Omp-jL-V24" id="5oN-Y5-9Kc"/>
+                        <segue destination="adN-Tb-UAK" kind="presentation" identifier="gameOverSeg" modalPresentationStyle="fullScreen" id="jva-oF-5Wn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="3.6945812807881775"/>
+            <point key="canvasLocation" x="340" y="392"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qUP-pr-6i6">
+            <objects>
+                <viewController id="cTG-rC-cU5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yG1-Is-h5H">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Color Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFw-89-Yp9">
+                                <rect key="frame" x="16" y="147" width="358" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF4-bX-Tls">
+                                <rect key="frame" x="10" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0uA-aw-eHp"/>
+                                    <constraint firstAttribute="width" constant="50" id="qAJ-nT-qeY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <imageReference key="image" image="trophy.circle.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B59-3k-VAJ">
+                                <rect key="frame" x="330" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cN2-97-g1W"/>
+                                    <constraint firstAttribute="width" constant="50" id="ew7-Nb-gRI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Al-RA-P68">
+                                <rect key="frame" x="170" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="N5c-gh-vck"/>
+                                    <constraint firstAttribute="height" constant="50" id="QlU-wh-rcZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="g01-6Z-KyS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9v5-gX-nEO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qFw-89-Yp9" firstAttribute="top" secondItem="9v5-gX-nEO" secondAttribute="top" constant="100" id="Amg-cR-FPx"/>
+                            <constraint firstItem="4Al-RA-P68" firstAttribute="leading" secondItem="dF4-bX-Tls" secondAttribute="trailing" constant="110" id="Igv-Lf-wea"/>
+                            <constraint firstItem="9v5-gX-nEO" firstAttribute="bottom" secondItem="B59-3k-VAJ" secondAttribute="bottom" constant="20" id="Kgd-KI-xxC"/>
+                            <constraint firstItem="9v5-gX-nEO" firstAttribute="bottom" secondItem="4Al-RA-P68" secondAttribute="bottom" constant="20" id="W3V-QU-iqr"/>
+                            <constraint firstItem="9v5-gX-nEO" firstAttribute="bottom" secondItem="dF4-bX-Tls" secondAttribute="bottom" constant="20" id="f05-pP-2AV"/>
+                            <constraint firstItem="dF4-bX-Tls" firstAttribute="leading" secondItem="9v5-gX-nEO" secondAttribute="leading" constant="10" id="gwe-ep-wUx"/>
+                            <constraint firstItem="qFw-89-Yp9" firstAttribute="leading" secondItem="9v5-gX-nEO" secondAttribute="leading" constant="10" id="kvb-MW-g7q"/>
+                            <constraint firstItem="9v5-gX-nEO" firstAttribute="trailing" secondItem="B59-3k-VAJ" secondAttribute="trailing" constant="10" id="lfG-BY-8xy"/>
+                            <constraint firstItem="B59-3k-VAJ" firstAttribute="leading" secondItem="4Al-RA-P68" secondAttribute="trailing" constant="110" id="nm5-Mh-cGf"/>
+                            <constraint firstItem="9v5-gX-nEO" firstAttribute="trailing" secondItem="qFw-89-Yp9" secondAttribute="trailing" constant="10" id="sdj-AM-fin"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6X9-ia-uyd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xS-Sf-AOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="-348"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="NYM-vg-PxZ">
+            <objects>
+                <viewController id="adN-Tb-UAK" customClass="GameOverViewController" customModule="ColorGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UeT-NZ-0qe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE2-In-fGC">
+                                <rect key="frame" x="170" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Fmf-Ei-b2V"/>
+                                    <constraint firstAttribute="height" constant="50" id="t6f-o6-d3q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="lO4-D4-vQL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC7-Xe-LMb">
+                                <rect key="frame" x="16" y="147" width="358" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="42"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP3-KP-nE8">
+                                <rect key="frame" x="16" y="298" width="358" height="76.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="64"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PNf-9D-E0E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KE2-In-fGC" firstAttribute="leading" secondItem="PNf-9D-E0E" secondAttribute="leading" constant="170" id="7CB-bB-F6o"/>
+                            <constraint firstItem="PNf-9D-E0E" firstAttribute="trailing" secondItem="cP3-KP-nE8" secondAttribute="trailing" constant="16" id="AS0-Om-7Rv"/>
+                            <constraint firstItem="JC7-Xe-LMb" firstAttribute="leading" secondItem="PNf-9D-E0E" secondAttribute="leading" constant="16" id="F54-b8-TDe"/>
+                            <constraint firstItem="JC7-Xe-LMb" firstAttribute="top" secondItem="PNf-9D-E0E" secondAttribute="top" constant="100" id="MS4-ZP-XK1"/>
+                            <constraint firstItem="PNf-9D-E0E" firstAttribute="bottom" secondItem="KE2-In-fGC" secondAttribute="bottom" constant="20" id="ZrV-e0-RrF"/>
+                            <constraint firstItem="PNf-9D-E0E" firstAttribute="trailing" secondItem="KE2-In-fGC" secondAttribute="trailing" constant="170" id="ou3-Ww-IET"/>
+                            <constraint firstItem="cP3-KP-nE8" firstAttribute="top" secondItem="JC7-Xe-LMb" secondAttribute="bottom" constant="100" id="qZ0-fx-gaq"/>
+                            <constraint firstItem="cP3-KP-nE8" firstAttribute="leading" secondItem="PNf-9D-E0E" secondAttribute="leading" constant="16" id="xaH-SE-kej"/>
+                            <constraint firstItem="PNf-9D-E0E" firstAttribute="trailing" secondItem="JC7-Xe-LMb" secondAttribute="trailing" constant="16" id="xw3-yW-TFb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="cP3-KP-nE8" id="jGf-YY-Roy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeo-7x-ANL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="153"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jva-oF-5Wn"/>
+        <segue reference="lO4-D4-vQL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="BlueButton" width="128" height="128"/>
         <image name="GrayButton" width="128" height="128"/>
         <image name="GreenButton" width="128" height="128"/>
         <image name="RedButton" width="128" height="128"/>
         <image name="YellowButton" width="128" height="128"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="trophy.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
