@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum Color {
     case red, green, blue, yellow, gray
@@ -13,6 +14,7 @@ enum Color {
 
 class ViewController: UIViewController {
     
+    private var audioPlayer: AVAudioPlayer?
     private var screenSize = CGRect()
     private var screenWidth = CGFloat()
     private var screenHeight = CGFloat()
@@ -23,6 +25,11 @@ class ViewController: UIViewController {
     private let tapBlue = UITapGestureRecognizer()
     private let tapGreen = UITapGestureRecognizer()
     private let tapYellow = UITapGestureRecognizer()
+    private let soundRedPath = Bundle.main.path(forResource: "Color1", ofType: "wav")!
+    private let soundBluePath = Bundle.main.path(forResource: "Color2", ofType: "wav")!
+    private let soundGreenPath = Bundle.main.path(forResource: "Color3", ofType: "wav")!
+    private let soundYellowPath = Bundle.main.path(forResource: "Color4", ofType: "wav")!
+    private let soundGrayPath = Bundle.main.path(forResource: "gameOver", ofType: "wav")!
     private var colorList: [Color] = []
     private var userTapIndex = 0
     private var score = 0
@@ -84,14 +91,38 @@ class ViewController: UIViewController {
             print(userTapIndex)
             if self.colorList.count-2 == userTapIndex {
                 nextLevel()
+                playSound(color: buttonTapped.name)
             } else {
                 if self.colorList[userTapIndex] == buttonTapped.name {
                     print("👍")
+                    playSound(color: buttonTapped.name)
                 } else {
                     gameOver()
+                    playSound(color: Color.gray)
                 }
                 userTapIndex+=1
             }
+        }
+    }
+    func playSound(color: Color){
+        var url = URL(string: "")
+        switch(color){
+        case Color.red:
+            url = URL(fileURLWithPath: soundRedPath)
+        case Color.blue:
+            url = URL(fileURLWithPath: soundBluePath)
+        case Color.green:
+            url = URL(fileURLWithPath: soundGreenPath)
+        case Color.yellow:
+            url = URL(fileURLWithPath: soundYellowPath)
+        case .gray:
+            url = URL(fileURLWithPath: soundGrayPath)
+        }
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            audioPlayer?.play()
+        } catch {
+            print(error.localizedDescription)
         }
     }
     func randomColor() -> Color{
@@ -128,6 +159,7 @@ class ViewController: UIViewController {
         case Color.blue: monitorImage.image = UIImage(named: "BlueButton")
         case Color.gray: monitorImage.image = UIImage(named: "GrayButton")
         }
+        playSound(color: color)
         monitorImage.resizeImage(targetSize: CGSize(width: screenWidth/monitorDivider, height: screenHeight/monitorDivider))
         monitorImage.layer.cornerRadius = 10
     }

@@ -16,6 +16,11 @@
 		2814F6AF29198A9F00A382E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2814F6AD29198A9F00A382E6 /* LaunchScreen.storyboard */; };
 		283A5BFB291D79ED003D66B2 /* ImageViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */; };
 		283A5BFD291D8469003D66B2 /* ImageViewMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283A5BFC291D8469003D66B2 /* ImageViewMonitor.swift */; };
+		288982042938F89E00664382 /* gameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 288981FF2938F89E00664382 /* gameOver.wav */; };
+		288982052938F89E00664382 /* Color3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 288982002938F89E00664382 /* Color3.wav */; };
+		288982062938F89E00664382 /* Color2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 288982012938F89E00664382 /* Color2.wav */; };
+		288982072938F89E00664382 /* Color1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 288982022938F89E00664382 /* Color1.wav */; };
+		288982082938F89E00664382 /* Color4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 288982032938F89E00664382 /* Color4.wav */; };
 		28CAE29B2937EC220059129E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CAE29A2937EC220059129E /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +36,11 @@
 		2814F6B029198A9F00A382E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewButton.swift; sourceTree = "<group>"; };
 		283A5BFC291D8469003D66B2 /* ImageViewMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewMonitor.swift; sourceTree = "<group>"; };
+		288981FF2938F89E00664382 /* gameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameOver.wav; sourceTree = "<group>"; };
+		288982002938F89E00664382 /* Color3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Color3.wav; sourceTree = "<group>"; };
+		288982012938F89E00664382 /* Color2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Color2.wav; sourceTree = "<group>"; };
+		288982022938F89E00664382 /* Color1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Color1.wav; sourceTree = "<group>"; };
+		288982032938F89E00664382 /* Color4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Color4.wav; sourceTree = "<group>"; };
 		28CAE29A2937EC220059129E /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +74,7 @@
 		2814F69E29198A9E00A382E6 /* ColorGame */ = {
 			isa = PBXGroup;
 			children = (
+				288981FE2938F88600664382 /* Sounds */,
 				283A5BFA291D79ED003D66B2 /* ImageViewButton.swift */,
 				2814F69F29198A9E00A382E6 /* AppDelegate.swift */,
 				2814F6A129198A9E00A382E6 /* SceneDelegate.swift */,
@@ -77,6 +88,18 @@
 				2814F6A829198A9E00A382E6 /* ColorGame.xcdatamodeld */,
 			);
 			path = ColorGame;
+			sourceTree = "<group>";
+		};
+		288981FE2938F88600664382 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				288982022938F89E00664382 /* Color1.wav */,
+				288982012938F89E00664382 /* Color2.wav */,
+				288982002938F89E00664382 /* Color3.wav */,
+				288982032938F89E00664382 /* Color4.wav */,
+				288981FF2938F89E00664382 /* gameOver.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2814F6AF29198A9F00A382E6 /* LaunchScreen.storyboard in Resources */,
+				288982082938F89E00664382 /* Color4.wav in Resources */,
 				2814F6AC29198A9F00A382E6 /* Assets.xcassets in Resources */,
+				288982072938F89E00664382 /* Color1.wav in Resources */,
+				288982042938F89E00664382 /* gameOver.wav in Resources */,
+				288982062938F89E00664382 /* Color2.wav in Resources */,
+				288982052938F89E00664382 /* Color3.wav in Resources */,
 				2814F6A729198A9E00A382E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
